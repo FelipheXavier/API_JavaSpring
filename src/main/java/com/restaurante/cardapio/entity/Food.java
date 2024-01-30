@@ -13,10 +13,12 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Table(name = "foods")
 @Entity(name = "food")
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Food {
