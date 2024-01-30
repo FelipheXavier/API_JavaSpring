@@ -1,5 +1,7 @@
 package com.restaurante.cardapio.entity;
 
+import com.restaurante.cardapio.dto.FoodDTO;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,6 +20,14 @@ public class Food {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    private String photo;
     private String description;
     private double price;
+
+    public Food(FoodDTO data){
+        this.name = data.name();
+        this.description = data.description();
+        this.photo = data.photo();
+        this.price = data.price();
+    }
 }
