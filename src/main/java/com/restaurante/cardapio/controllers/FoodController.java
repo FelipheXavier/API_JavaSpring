@@ -3,6 +3,7 @@ package com.restaurante.cardapio.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -53,5 +54,13 @@ public class FoodController {
         food.setPrice(data.price());
         Food uptadedNewFood = repository.save(food);
         return new FoodDTO(uptadedNewFood); 
+    }
+    @DeleteMapping("{id}")
+    public void deleteFood(@PathVariable Long id){
+        repository.deleteById(id);
+    }
+    @DeleteMapping("/deleteAll")
+    public void deleteAllFoods(){
+        repository.deleteAll();
     }
 }
