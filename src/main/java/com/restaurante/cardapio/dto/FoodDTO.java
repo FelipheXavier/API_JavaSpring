@@ -10,7 +10,7 @@ public record FoodDTO(Long id,
 String name,
 String description,
 String photo,
-double price) {
+String price) {
     public FoodDTO(Food food){
         this(food.getId(),food.getName(),food.getDescription(),food.getPhoto(),food.getPrice());
     }

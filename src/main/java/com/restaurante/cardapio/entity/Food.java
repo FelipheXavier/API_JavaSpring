@@ -27,7 +27,7 @@ public class Food {
     private String name;
     private String photo;
     private String description;
-    private double price;
+    private String price;
 
     public Food(FoodDTO data){
         this.name = data.name();
